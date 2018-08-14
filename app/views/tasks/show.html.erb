@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @task.title %>
+    <br>
+    <small class="text-muted">
+      <%= @task.details %>
+    </small>
+  </h1>
+  <hr>
+  <i class="fas fa-undo text-primary"></i><%= link_to " Back to tasks", tasks_path %>
+  &nbsp;
+  <i class="fas fa-pen text-primary"></i><%= link_to " Edit", edit_path %>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="mb-5">My tasks</h1>
+
+  <ul class="col-xs-12 col-md-6">
+
+    <% @tasks.each do |task| %>
+
+
+      <div class="form-group form-check mb-2">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" <%= task.completed ? "checked" : "" %>>
+
+
+
+        <%= link_to task.title, task_path(task)  %>
+        &nbsp;
+
+          <%= link_to delete_path(task), method: :delete,  data: { confirm: "Are you sure?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+
+      </div>
+
+    <% end %>
+  </ul>
+
+  <hr>
+
+  <i class="fas fa-plus-circle text-primary"></i> <%= link_to "Create a task", tasks_new_path %>
+
+</div>
